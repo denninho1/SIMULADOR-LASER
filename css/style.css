@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 
@@ -11,10 +13,24 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #532b1b, #5c3026);
-    padding: 20px;
+    flex-direction: column;
+    background: linear-gradient(135deg, #ff0000, #630000);
+    padding: 0 20px;
 }
 
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+    margin: 0;
+}
+
+.logo {
+    background-image: url(../img/Logo\ \(SVG\).svg);
+    width: 80px;
+    height: 80px;
+    
+}
 
 .container {
     width: 1100px;
@@ -23,6 +39,7 @@ body {
     border-radius: 20px;
     padding: 30px;
     box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    transition: all .3s ease;
 }
 
 
@@ -72,13 +89,21 @@ input {
 
 input:focus {
     outline: none;
-    border-color: #eb5d25;
+    border-color: #ff0000;
+}
+
+.table_wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
 thead {
-    background: #0f172a;
+    background: #1e2223;
     color: white;
+    transition: all .3s ease;
 }
 
 
@@ -86,6 +111,12 @@ th {
     padding: 14px;
     font-size: 13px;
     letter-spacing: .5px;
+}
+
+.info {
+    display: block;
+    font-size: 10px;
+    color: #d8d8d8;
 }
 
 
@@ -103,7 +134,7 @@ tbody tr {
 
 
 tbody tr:hover {
-    background: #f1f5f9;
+    background: #f39447;
     transform: scale(1.01);
 }
 
@@ -115,7 +146,7 @@ tbody tr:hover {
 
 
 .currency {
-    color: #0f172a;
+    color: #1e2223;
     font-weight: 600;
 }
 
