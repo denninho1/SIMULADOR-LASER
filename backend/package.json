@@ -1,0 +1,24 @@
+{
+  "name": "simulador",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denninho1/SIMULADOR-LASER.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/denninho1/SIMULADOR-LASER/issues"
+  },
+  "homepage": "https://github.com/denninho1/SIMULADOR-LASER#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
