@@ -28,7 +28,7 @@ input::-webkit-inner-spin-button {
     background-image: url(../img/Logo\ \(SVG\).svg);
     width: 150px;
     height: 150px;
-    
+    margin: 10px;
 }
 
 .container {
