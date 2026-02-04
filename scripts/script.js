@@ -1,4 +1,4 @@
-// -------- FATORES (iguais à planilha) --------
+// -------- FATORES --------
 
 const fatores = [
     { parcelas: 2, fator: 0.5070 },
@@ -21,7 +21,7 @@ const fatores = [
 ];
 
 
-// -------- PEGANDO INPUTS --------
+// -------- INPUTS(Campos de preenchimento) e a Tabela --------
 
 const valorSistema = document.getElementById("valorSistema");
 const valorEntrada = document.getElementById("valorEntrada");
@@ -39,7 +39,7 @@ function formatarMoeda(valor) {
 }
 
 
-// -------- FUNÇÃO PRINCIPAL --------
+// -------- CALCULAR AS PARCELAS  --------
 
 function calcularParcelas() {
 
@@ -82,7 +82,7 @@ function calcularParcelas() {
 }
 
 
-// -------- EVENTO DINÂMICO --------
+// -------- EVENTO DINÂMICO PARA CADA INPUT --------
 
 // recalcula sempre que digitar
 [valorSistema, valorEntrada, valorGarantia]
