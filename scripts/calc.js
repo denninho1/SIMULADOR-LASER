@@ -90,3 +90,53 @@ function calcularParcelas() {
     .forEach(input => {
         input.addEventListener("input", calcularParcelas);
 });
+
+
+const valorSistemaInput = document.getElementById("valorSistemaNegotiate");
+const valorParcelaInput = document.getElementById("valorParcelaNegotiate");
+const quantidadeInput = document.getElementById("quantidadeParcelasNegotiate");
+const tabelaNegotiate = document.getElementById("tabelaNegotiate");
+
+// Função principal
+function calcularNegociacao() {
+
+    const valorSistemaNegotiate = parseFloat(valorSistemaInput.value);
+    const valorParcela = parseFloat(valorParcelaInput.value);
+    const quantidade = parseInt(quantidadeInput.value);
+
+    // Limpa tabela
+    tabelaNegotiate.innerHTML = "";
+
+    if (!valorSistemaNegotiate || !valorParcela || !quantidade) return;
+    if (!fatores[quantidade]) return;
+
+    const objetoFator = fatores.find(item => item.parcelas === quantidade);
+
+    if (!objetoFator) return; // não encontrou
+
+    const fator = objetoFator.fator;
+
+    console.log(fator)
+
+    const pPartida = valorParcela / fator;
+    const desconto = valorSistemaNegotiate - pPartida;
+    const porcentagem = (desconto / valorSistemaNegotiate) * 100;
+
+    const linha = `
+        <tr>
+            <td>${quantidade}x</td>
+            <td>R$ ${valorSistemaNegotiate.toFixed(2)}</td>
+            <td>R$ ${valorParcela.toFixed(2)}</td>
+            <td>R$ ${desconto.toFixed(2)}</td>
+            <td>R$ ${pPartida.toFixed(2)}</td>
+            <td>${porcentagem.toFixed(2)}%</td>
+        </tr>
+    `;
+
+    tabelaNegotiate.innerHTML = linha;
+}
+
+// Eventos (executa a cada digitação)
+valorSistemaInput.addEventListener("input", calcularNegociacao);
+valorParcelaInput.addEventListener("input", calcularNegociacao);
+quantidadeInput.addEventListener("input", calcularNegociacao);

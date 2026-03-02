@@ -71,6 +71,22 @@ input::-webkit-inner-spin-button {
     
 }
 
+.content_simulator, .content_negotiate {
+    display: none;
+}
+
+/* Mostra apenas quando a classe 'active' estiver presente */
+.content_simulator.active, .content_negotiate.active {
+    display: block;
+}
+
+/* Opcional: Estilo para o botão da aba selecionada */
+.nav.active {
+    background-color: #e0e0e0; /* Ou a cor de sua preferência */
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+}
+
 
 /* CONTEUDOS */
 
