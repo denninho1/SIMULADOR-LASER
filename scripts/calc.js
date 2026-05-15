@@ -1,5 +1,5 @@
 // -------- FATORES --------
-// MODIFIQUE O VALOR DOS FATORES ABAIXO SE NECESSARIO
+// VARIAVEL FATORES (Modificavel)
 const fatores = [
     { parcelas: 2, fator: 0.5070 },
     { parcelas: 3, fator: 0.3427 },
@@ -56,15 +56,17 @@ function calcularParcelas() {
 
     // valores financiados
     const financiado = sistema - entrada;
-    const financiadoGarantia = (sistema + garantia) - entrada;
 
     fatores.forEach(item => {
 
         const parcela = financiado * item.fator;
         const total = entrada + (parcela * item.parcelas);
 
-        const parcelaGarantia = financiadoGarantia * item.fator;
-        const totalGarantia = entrada + (parcelaGarantia * item.parcelas);
+        const parcelaGarantia = parcela + (garantia / item.parcelas);
+        const totalGarantia = total + garantia;
+
+        /* const parcelaGarantia = financiadoGarantia * item.fator;
+        const totalGarantia = entrada + (parcelaGarantia * item.parcelas); */
 
         const linha = `
             <tr>
